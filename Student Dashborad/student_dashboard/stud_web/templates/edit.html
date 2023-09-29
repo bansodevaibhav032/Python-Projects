@@ -1,0 +1,96 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/update/{{data.stud_id}}">
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3 style="font-size:x-large"`>Update Details</h3>
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Student Id:</label>
+    <div class="col-sm-4">  
+        <input type="int" name="stud_id" id="stud_id" required maxlength="20" value="{{ data.stud_id }}"/>
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Student First Name:</label>
+    <div class="col-sm-4">  
+        <input type="text" name="stud_fname" id="stud_fname" required maxlength="100" value="{{ data.stud_fname }}" />
+    </div>  
+  </div>
+     <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Last Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="stud_lname" id="stud_lname" required maxlength="100" value="{{ data.stud_lname }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Class:</label>
+    <div class="col-sm-4">
+        <input type="text" name="stud_class" id="stud_class" required maxlength="100" value="{{ data.stud_class }}" />
+    </div>
+  </div>
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Employee Email:</label>  
+    <div class="col-sm-4">  
+        <input type="email" name="stud_email" id="stud_email" required maxlength="254" value="{{ data.stud_email }}" />
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Student Contact:</label>
+    <div class="col-sm-4">
+        <input type="text" name="stud_contact" id="stud_contact" required maxlength="15" value="{{ data.stud_contact }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student City:</label>
+    <div class="col-sm-4">
+        <input type="text" name="stud_city" id="stud_city" required maxlength="15" value="{{ data.stud_city }}" />
+    </div>
+  </div><div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Age:</label>
+    <div class="col-sm-4">
+        <input type="number" name="stud_age" id="stud_age" required maxlength="15" value="{{ data.stud_age }}" />
+    </div>
+  </div><div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Address:</label>
+    <div class="col-sm-4">
+        <td><textarea name="stud_address" id="stud_address"> {{data.stud_address}}  </textarea></td>
+  </div>
+    </div><div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Blood Group:</label>
+    <div class="col-sm-4">
+        <input type="text" name="stud_bloodgroup" id="stud_bloodgroup" required maxlength="15" value="{{ data.stud_bloodgroup }}" />
+  </div>
+    </div><div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Date Of Birth :</label>
+    <div class="col-sm-4">
+        <input type="date" name="stud_DOB" id="stud_DOB" required maxlength="15" value="{{ data.stud_DOB }}" />
+  </div>
+    </div><div class="form-group row">
+    <label class="col-sm-2 col-form-label">Student Gender:</label>
+    <div class="col-sm-4">
+        <input type="" name="stud_gen" id="stud_gen" required maxlength="15" value="{{ data.stud_gen }}" />
+  </div>
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-success">Update</button>  
+    </div>  
+  </div>
+    </div>
+    </div>
+</form>  
+</body>  
+</html>  

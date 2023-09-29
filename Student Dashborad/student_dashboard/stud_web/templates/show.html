@@ -1,0 +1,56 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Employee Records</title>  
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>Student ID</th>
+        <th>Student First Name</th>
+        <th>Student Last Name</th>
+        <th>Student Class</th>
+        <th>Student Email</th>
+        <th>Student Age</th>
+        <th>Student Address</th>
+        <th>Student City</th>
+        <th>Student Contact</th>
+        <th>Student Blood Group</th>
+        <th>Student Date of Birth</th>
+        <th>Student Gender</th>
+
+        <th>Actions</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+    {% for i in details %}
+    <tr>  
+        <td>{{ i.stud_id }}</td>
+        <td>{{ i.stud_fname }}</td>
+        <td>{{ i.stud_lname }}</td>
+        <td>{{ i.stud_class }}</td>
+        <td>{{ i.stud_email }}</td>
+        <td>{{ i.stud_age }}</td>
+        <td>{{ i.stud_address }}</td>
+        <td>{{ i.stud_city }}</td>
+        <td>{{ i.stud_contact }}</td>
+        <td>{{ i.stud_bloodgroup }}</td>
+        <td>{{ i.stud_DOB }}</td>
+        <td>{{ i.stud_gen }}</td>
+        <td>  
+            <a href="/edit/{{ i.stud_id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+            <a href="/delete/{{ i.stud_id }}">Delete</a>
+        </td>  
+    </tr>  
+    {% endfor %}
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="{% url 'create' %}" class="btn btn-primary">Add New Record</a></center>
+</body>  
+</html>  
